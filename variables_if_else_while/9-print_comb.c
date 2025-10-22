@@ -6,12 +6,21 @@
  *
  * Return: Always 0 (Success)
  */
+
 int main(void)
 {
-int numbers;
+int i;
 
-for (numbers = '0'; numbers <= '9'; numbers++)
-putchar(numbers);
+for (i = 0; i < 10; i++)
+{
+	putchar(i + '0');
+
+if (i < 9)
+
+	putchar (',');
+	putchar (' ');
+}
+
 putchar('\n');
 
 return (0);
