@@ -7,18 +7,20 @@
  */
 int main(void)
 {
-		char letter;
-		char numbers;
+	char letter;
+	char numbers;
 
 	for (numbers = '0'; numbers <= '9'; numbers++)
-{
+	{
 		putchar(numbers);
-}
-for (letter = 'a'; letter <= 'f'; letter++)
+	}
 
-putchar(letter);
+	for (letter = 'a'; letter <= 'f'; letter++)
+	{
+		putchar(letter);
+	}
 
-putchar('\n');
+	putchar('\n');
 
 	return (0);
 }
