@@ -1,4 +1,4 @@
-#include "main.h"
+#include "MAIN.H"
 
 /**
  * main - Point d’entrée du programme
