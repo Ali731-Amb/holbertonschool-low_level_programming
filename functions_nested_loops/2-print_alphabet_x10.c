@@ -1,0 +1,22 @@
+#include main.h
+/**
+ * main - check the code.
+ *
+ * Return: void.
+ */
+void print_alphabet_x10(void);
+{
+	char letter;
+	int count;
+
+	for (letter = 'a'; letter <= 'z'; letter++)
+	{
+	_putchar(letter);
+	}
+	{
+	for (count = '0'; count <= '10'; count++)
+	}
+
+	_putchar('\n');
+
+}
