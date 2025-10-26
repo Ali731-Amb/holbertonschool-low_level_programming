@@ -16,6 +16,6 @@ last = n % 10;
 if (last < 0)
 last = -last;
 
-write( last);
+printf("%d", last);
 return (last);
 }
