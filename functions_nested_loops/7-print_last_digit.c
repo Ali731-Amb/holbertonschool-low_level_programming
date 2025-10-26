@@ -16,6 +16,6 @@ last = n % 10;
 if (last < 0)
 last = -last;
 
-printf("%d", last);
+_putchar(last + '0');
 return (last);
 }
