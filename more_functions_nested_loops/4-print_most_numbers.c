@@ -14,7 +14,7 @@ char numbers;
 {
 
 	for (numbers = '0'; numbers <= '9'; numbers++)
-	if (numbers != 4 && numbers != 2)
+	if (numbers != '4' && numbers != '2')
 	_putchar(numbers);
 }
 	_putchar('\n');
