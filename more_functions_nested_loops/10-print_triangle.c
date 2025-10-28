@@ -1,10 +1,11 @@
 #include "main.h"
 
-/*
- *print_triangle - Write a function that
- *prints a triangle, followed by a new line
- *@size: taille du triangle
+/**
+ * print_triangle - Prints a triangle, followed by a new line
+ * @size: The size of the triangle
  *
+ * Description: This function prints a right-aligned triangle made of
+ * the character '#'. If size is 0 or less, it prints only a new line.
  */
 
 void print_triangle(int size)
