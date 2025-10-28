@@ -1,0 +1,26 @@
+#include "main.h"
+
+/*
+ *print_triangle - Write a function that
+ *prints a triangle, followed by a new line
+ *@size: taille du triangle
+ *
+ */
+
+void print_triangle(int size)
+{
+	int i, j;
+
+	for (i = 1; i < size; i++)
+	{
+		for (j = 1; j < size; j++)
+		{
+			if (j <= size - i)
+			_putchar(' ');
+			 else
+			_putchar('#');
+		}
+
+	_putchar ('\n');
+	}
+}
