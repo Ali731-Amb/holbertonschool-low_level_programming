@@ -18,7 +18,7 @@ int i;
 	(void) argv;
 	{
 		for (i = 0; i < argc; i++)
-			printf("%c\n", i);
+			printf("%s\n", argv[i]);
 	}
 	return (0);
 }
