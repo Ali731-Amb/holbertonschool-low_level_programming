@@ -16,7 +16,7 @@ char *_strdup(char *str)
 
 	int length = 0;
 
-	char *copy = NULL;
+	char *copy;
 
 	if (str == NULL)
 		return (NULL);
@@ -31,6 +31,9 @@ char *_strdup(char *str)
 		return (NULL);
 
 	copy = malloc(length + 1);
+
+	if (copy == NULL)
+		return (NULL);
 
 	{
 		for (i = 0; i < length; i++)
