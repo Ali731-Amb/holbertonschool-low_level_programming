@@ -1,157 +1,301 @@
-# Holberton School - Low Level Programming
+# C - argc, argv
 
 ## Table of Contents
 
 - [About](#about)
 - [Getting Started](#getting_started)
 - [Usage](#usage)
-- [Projects](#projects)
-- [Contributing](../CONTRIBUTING.md)
+- [Tasks](#tasks)
+- [Learning Objectives](#learning_objectives)
 
 ## About <a name = "about"></a>
 
-This repository contains all projects and exercises completed as part of the Low-Level Programming curriculum at Holberton School. The primary focus is on learning the C programming language, understanding computer architecture, memory management, data structures, and algorithms at a fundamental level.
+This project focuses on understanding and using command-line arguments in C programming. You will learn how to use `argc` (argument count) and `argv` (argument vector) to pass data to your programs at runtime, making them more flexible and interactive.
 
-These projects build a strong foundation in systems programming, covering topics from basic syntax and control structures to advanced concepts like dynamic memory allocation, file I/O, data structures (linked lists, hash tables, binary trees), and algorithm design. Each project is designed to deepen understanding of how software interacts with hardware and to develop problem-solving skills essential for software engineering.
+The `argc` parameter contains the number of command-line arguments passed to the program, while `argv` is an array of strings representing those arguments. This fundamental concept is essential for creating command-line tools and utilities that can accept user input directly from the terminal.
 
 ## Getting Started <a name = "getting_started"></a>
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+These instructions will help you compile and test the programs in this project on your local machine.
 
 ### Prerequisites
 
-To compile and run the programs in this repository, you need:
+You need the following tools installed on your system:
 
-- **GCC (GNU Compiler Collection)** - version 4.8.4 or later
-- **Ubuntu 20.04 LTS** or similar Linux distribution
-- **Betty linter** - for code style checking
-- **Git** - for version control
+```bash
+gcc (GNU Compiler Collection) - version 4.8.4 or later
+Ubuntu 20.04 LTS or similar Linux distribution
+Betty linter for code style checking
+```
 
-Install the required packages:
+Install GCC if not already available:
 
 ```bash
 sudo apt-get update
 sudo apt-get install gcc
-sudo apt-get install git
-```
-
-Install Betty (Holberton's C code style checker):
-
-```bash
-git clone https://github.com/holbertonschool/Betty.git
-cd Betty
-sudo ./install.sh
+sudo apt-get install build-essential
 ```
 
 ### Installing
 
-Follow these steps to get a development environment running:
+Follow these steps to compile and run the programs:
 
-1. Clone the repository to your local machine:
+1. Clone the repository:
 
 ```bash
 git clone https://github.com/Ali731-Amb/holbertonschool-low_level_programming.git
 ```
 
-2. Navigate to the project directory:
+2. Navigate to the argc_argv directory:
 
 ```bash
-cd holbertonschool-low_level_programming
+cd holbertonschool-low_level_programming/argc_argv
 ```
 
-3. Choose a specific project directory (e.g., hello_world):
+3. Compile any C file with the required flags:
 
 ```bash
-cd 0x00-hello_world
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 filename.c -o output_name
 ```
 
-4. Compile a C file using GCC:
+4. Run the compiled program with arguments:
 
 ```bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 0-main.c 0-positive_or_negative.c -o output
+./output_name arg1 arg2 arg3
 ```
 
-5. Run the compiled program:
-
-```bash
-./output
-```
-
-The program will execute and display the output based on the project requirements.
+The program will process the command-line arguments according to its specific functionality.
 
 ## Usage <a name = "usage"></a>
 
-Each directory in this repository represents a different project or concept in low-level programming. To use any project:
+Each program in this directory demonstrates different aspects of working with command-line arguments.
 
-1. Navigate to the specific project directory
-2. Read the README.md file in that directory for specific instructions
-3. Compile the C files using the compilation flags specified in the project requirements
-4. Execute the compiled binary
-
-**Example - Compiling and running a simple program:**
+### Example 1: Print program name
 
 ```bash
-cd 0x00-hello_world
-gcc -Wall -Werror -Wextra -pedantic 4-puts.c -o hello
-./hello
+gcc -Wall -pedantic -Werror -Wextra 0-whatsmyname.c -o mynameis
+./mynameis
 ```
 
-**Expected output:**
+**Output:**
 ```
-"Programming is like building a multilingual puzzle
+./mynameis
 ```
 
-**Checking code style with Betty:**
+If you rename the executable:
+```bash
+mv mynameis mynewname
+./mynewname
+```
+
+**Output:**
+```
+./mynewname
+```
+
+### Example 2: Count arguments
 
 ```bash
-betty filename.c
+gcc -Wall -pedantic -Werror -Wextra 1-args.c -o nargs
+./nargs hello world "foo bar"
 ```
 
-Ensure all your code passes Betty style checks before submission.
+**Output:**
+```
+3
+```
 
-## Projects <a name = "projects"></a>
+### Example 3: Print all arguments
 
-The repository is organized into directories, each representing a specific learning objective:
+```bash
+gcc -Wall -pedantic -Werror -Wextra 2-args.c -o args
+./args You can do anything
+```
 
-- **0x00-hello_world** - Introduction to C, compilation process, basic output
-- **0x01-variables_if_else_while** - Variables, conditionals, loops
-- **0x02-functions_nested_loops** - Functions, nested loops, header files
-- **0x03-debugging** - Debugging techniques and tools
-- **0x04-more_functions_nested_loops** - Advanced function concepts
-- **0x05-pointers_arrays_strings** - Introduction to pointers and arrays
-- **0x06-pointers_arrays_strings** - More on pointers, arrays, and strings
-- **0x07-pointers_arrays_strings** - Even more pointers, arrays, and strings
-- **0x08-recursion** - Recursive functions
-- **0x09-static_libraries** - Creating and using static libraries
-- **0x0A-argc_argv** - Command line arguments
-- **0x0B-malloc_free** - Dynamic memory allocation
-- **0x0C-more_malloc_free** - Advanced dynamic memory allocation
-- **0x0D-preprocessor** - C preprocessor directives
-- **0x0E-structures_typedef** - Structures and typedef
-- **0x0F-function_pointers** - Function pointers
-- **0x10-variadic_functions** - Variadic functions
-- **0x12-singly_linked_lists** - Singly linked lists
-- **0x13-more_singly_linked_lists** - More operations on linked lists
-- **0x14-bit_manipulation** - Bit manipulation operations
-- **0x15-file_io** - File input/output operations
-- **0x17-doubly_linked_lists** - Doubly linked lists
-- **0x18-dynamic_libraries** - Creating and using dynamic libraries
-- **0x1A-hash_tables** - Hash tables implementation
-- **0x1C-makefiles** - Creating Makefiles
-- **0x1E-search_algorithms** - Search algorithms (linear, binary, etc.)
+**Output:**
+```
+./args
+You
+can
+do
+anything
+```
 
-Each project directory contains its own README with detailed requirements, learning objectives, and usage examples.
+### Example 4: Multiply two numbers
+
+```bash
+gcc -Wall -pedantic -Werror -Wextra 3-mul.c -o mul
+./mul 5 10
+```
+
+**Output:**
+```
+50
+```
+
+If incorrect number of arguments:
+```bash
+./mul 5
+```
+
+**Output:**
+```
+Error
+```
+
+### Example 5: Add positive numbers
+
+```bash
+gcc -Wall -pedantic -Werror -Wextra 4-add.c -o add
+./add 1 2 3 4 5
+```
+
+**Output:**
+```
+15
+```
+
+If non-numeric argument is provided:
+```bash
+./add 1 2 a 4
+```
+
+**Output:**
+```
+Error
+```
+
+## Tasks <a name = "tasks"></a>
+
+### 0. It ain't what they call you, it's what you answer to
+**File:** `0-whatsmyname.c`
+
+Write a program that prints its name, followed by a new line.
+- If you rename the program, it will print the new name without having to compile it again.
+- The program should print the name even if no arguments are passed.
+
+### 1. Silence is argument carried out by other means
+**File:** `1-args.c`
+
+Write a program that prints the number of arguments passed into it.
+- The program name counts as one argument.
+- The count should not include the program name itself.
+
+### 2. The best argument against democracy is a five-minute conversation with the average voter
+**File:** `2-args.c`
+
+Write a program that prints all arguments it receives.
+- All arguments should be printed, one per line.
+- The first argument should be the name of the program.
+
+### 3. Neither irony nor sarcasm is argument
+**File:** `3-mul.c`
+
+Write a program that multiplies two numbers.
+- The program should receive exactly two arguments (numbers to multiply).
+- The program should print the result, followed by a new line.
+- If the program does not receive two arguments, print `Error` and return `1`.
+
+### 4. To infinity and beyond
+**File:** `4-add.c`
+
+Write a program that adds positive numbers.
+- Print the result followed by a new line.
+- If no number is passed, print `0`.
+- If one of the numbers contains symbols that are not digits, print `Error` and return `1`.
+
+### 5. Minimal number of coins for change (Advanced)
+**File:** `100-change.c`
+
+Write a program that prints the minimum number of coins to make change for an amount of money.
+- Usage: `./change cents`
+- Where `cents` is the amount of cents you need to give back.
+- Use coins of values: 25, 10, 5, 2, and 1 cent.
+- If the number of arguments is not exactly 1, print `Error` and return `1`.
+- If the argument is negative, print `0`.
+
+## Learning Objectives <a name = "learning_objectives"></a>
+
+By the end of this project, you should be able to explain the following concepts without external help:
+
+### General
+- How to use arguments passed to your program
+- What are the two prototypes of `main` that you know of, and when to use each one
+- How to use `__attribute__((unused))` or `(void)` to compile functions with unused variables or parameters
+
+### Prototypes of main
+There are two common prototypes for the `main` function:
+
+1. **Without command-line arguments:**
+```c
+int main(void)
+```
+Use this when your program doesn't need to accept command-line arguments.
+
+2. **With command-line arguments:**
+```c
+int main(int argc, char *argv[])
+```
+or
+```c
+int main(int argc, char **argv)
+```
+Use this when your program needs to process command-line arguments.
+
+### Understanding argc and argv
+- **argc (argument count):** An integer that represents the number of command-line arguments passed to the program, including the program name itself.
+- **argv (argument vector):** An array of strings (character pointers) where each element is one of the command-line arguments. `argv[0]` is always the program name.
+
+### Handling unused parameters
+When you have parameters that are not used in your function, you can avoid compiler warnings by:
+
+```c
+int main(int argc __attribute__((unused)), char *argv[])
+{
+    // argc is marked as unused
+    printf("%s\n", argv[0]);
+    return (0);
+}
+```
+
+or
+
+```c
+int main(int argc, char *argv[])
+{
+    (void)argc; // Explicitly mark as unused
+    printf("%s\n", argv[0]);
+    return (0);
+}
+```
+
+## Requirements
+
+### General
+- Allowed editors: `vi`, `vim`, `emacs`
+- All files will be compiled on Ubuntu 20.04 LTS using `gcc` with the options `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- All files should end with a new line
+- A `README.md` file at the root of the project folder is mandatory
+- Code must follow the Betty style (checked with `betty-style.pl` and `betty-doc.pl`)
+- No global variables allowed
+- No more than 5 functions per file
+- Prototypes of all functions should be included in the header file `main.h`
+- Don't forget to push your header file
+- The use of the standard library is allowed
+
+## Compilation
+
+All C files should be compiled using:
+
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o program_name
+```
 
 ## Author
 
-**Ali Amb** - [Ali731-Amb](https://github.com/Ali731-Amb)
+**Ali Ambre** - [Ali731-Amb](https://github.com/Ali731-Amb)
 
 ## Acknowledgments
 
-- Holberton School for the curriculum and project guidelines
-- All peers and mentors who provided support throughout the learning process
-- The open-source community for tools and resources
-
-## License
-
-This project is part of the Holberton School curriculum. All rights reserved.
+- Holberton School for the project requirements and curriculum
+- All peers who provided support and code reviews
