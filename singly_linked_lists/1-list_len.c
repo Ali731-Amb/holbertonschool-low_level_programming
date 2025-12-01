@@ -15,7 +15,7 @@ size_t count = 0;
 while (h != NULL)
 {
 	if (h->str == NULL)
-	return(-1);
+	return (-1);
 
 	else
 	count++;
