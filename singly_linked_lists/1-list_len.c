@@ -15,14 +15,13 @@ size_t count = 0;
 while (h != NULL)
 {
 	if (h->str == NULL)
-	printf("[0] (nil)\n");
+	return(-1);
 
 	else
-	printf("%ld", count);
 	count++;
 	h = h->next;
 
 }
-return(count);
+return (count);
 
 }
