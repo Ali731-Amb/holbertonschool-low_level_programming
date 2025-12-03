@@ -10,14 +10,14 @@
 
 int sum_dlistint(dlistint_t *head)
 {
-	int sum = 0;
-	dlistint_t *current = head;
+	int sum = 0; // Initialiser la somme à 0
+	dlistint_t *current = head; // Pointeur temporaire pour parcourir la liste
 
 	while (current != NULL)
 	{
-		sum += current->n;
-	current = current->next;
+		sum += current->n; // Ajouter la valeur du nœud actuel à la somme
+		current = current->next; // Passer au nœud suivant
 	}
 
-	return (sum);
+	return (sum); // Retourner la somme totale
 }
