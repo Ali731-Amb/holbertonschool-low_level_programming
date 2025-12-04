@@ -11,13 +11,14 @@
 
 void free_dlistint(dlistint_t *head)
 {
-dlistint_t *temp;
+    dlistint_t *temp; // Variable temporaire pour stocker le prochain nœud
 
-while (head != NULL)
-{
-	temp = head->next;
-		free(head);
-		head = temp;
-}
-
+    // Parcours de la liste jusqu'à ce que le pointeur head soit NULL
+    while (head != NULL)
+    {
+        temp = head->next;      // Sauvegarde du pointeur vers le nœud suivant
+        free(head);             // Libération de la mémoire du nœud courant
+        head = temp;            // Passage au nœud suivant
+    }
+    // À la fin de la boucle, tous les nœuds ont été libérés
 }

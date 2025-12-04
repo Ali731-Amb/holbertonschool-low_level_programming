@@ -1,67 +1,68 @@
+// Fichier : 3-op_functions.c
+// Fonctions d'opérations arithmétiques : addition, soustraction, multiplication, division, modulo
 #include "3-calc.h"
 
 /**
- *op_add - funcion that return sum of a and b
+ * op_add - Fonction qui retourne la somme de a et b
+ * @a: premier nombre
+ * @b: deuxième nombre
  *
- *@a: number 1
- *@b: number 2
- *
- * Return: sum de a + b
+ * Return: la somme de a + b
  */
-
 int op_add(int a, int b)
 {
+	// Additionne a et b
 	return (a + b);
 }
+
 /**
- * *op_sub - function tat return
- * the difference of a and b
- *@a: number 1
- *@b: number 2
+ * op_sub - Fonction qui retourne la différence de a et b
+ * @a: premier nombre
+ * @b: deuxième nombre
  *
- * Return: différence de a et b
+ * Return: la différence de a et b
  */
 int op_sub(int a, int b)
 {
+	// Soustrait b de a
 	return (a - b);
 }
 
 /**
- * op_mul - funtion thath return the product of a and b
- *@a: number 1
- *@b: number 2
+ * op_mul - Fonction qui retourne le produit de a et b
+ * @a: premier nombre
+ * @b: deuxième nombre
  *
- * Return: produit de a et b
+ * Return: le produit de a et b
  */
 int op_mul(int a, int b)
 {
+	// Multiplie a et b
 	return (a * b);
 }
 
 /**
- * op_div - function that return
- * the result of the division a and b
- *@a: number 1
- *@b: number 2
+ * op_div - Fonction qui retourne le quotient de a et b
+ * @a: premier nombre
+ * @b: deuxième nombre
  *
- *Return: quotient de a et b
+ * Return: le quotient de a et b
  */
-
 int op_div(int a, int b)
 {
+	// Divise a par b
 	return (a / b);
 }
 
 /**
- * op_mod - funtion that return the remainder of the division
- *of a and b
- *@a: number 1
- *@b: number 2
+ * op_mod - Fonction qui retourne le reste de la division de a par b
+ * @a: premier nombre
+ * @b: deuxième nombre
  *
- * Return: reste de la division de a et b
+ * Return: le reste de la division de a et b
  */
-
 int op_mod(int a, int b)
 {
+	// Calcule le reste de la division entière de a par b
 	return (a % b);
 }
