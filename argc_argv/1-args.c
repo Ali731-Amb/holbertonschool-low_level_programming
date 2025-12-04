@@ -1,20 +1,22 @@
 #include <stdio.h>
+// Inclusion de la bibliothèque standard d'entrée/sortie
 
 /**
  * main - Point d'entrée principal du programme.
- * Cette fonction imprime le nom par lequel elle a été exécutée,
- * suivi d'un saut de ligne.
+ * Cette fonction affiche le nombre d'arguments passés au programme.
  *
- * @argc: Le nombre d'arguments sur la ligne de commande (non utilisé).
+ * @argc: Le nombre d'arguments sur la ligne de commande.
  * @argv: Un tableau de pointeurs vers les arguments de la ligne de commande.
- * argv[0] contient le nom du programme.
  *
- * Return: Toujours 0.
+ * Return: Toujours 0 (Succès).
  */
 
 int main(int argc, char *argv[])
 {
-	(void)argv;
-	printf("%s\n", argc);
-	return (0);
+	(void)argv; // On indique que argv n'est pas utilisé dans cette fonction
+
+	// Affiche le nombre d'arguments passés au programme (sans compter le nom du programme)
+	printf("%d\n", argc - 1);
+
+	return (0); // Fin du programme avec succès
 }

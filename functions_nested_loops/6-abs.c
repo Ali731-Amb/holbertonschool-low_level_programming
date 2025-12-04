@@ -1,22 +1,20 @@
 #include <stdio.h>
 #include "main.h"
-
+// Fonction pour calculer la valeur absolue d'un entier
 /**
- * int _abs - computes the absolute value of an integer
- * @n: the number to check
+ * _abs - Calcule la valeur absolue d'un entier
+ * @n: l'entier à vérifier
  *
- * return: -n si n < 0, si n < 0 return n, 0 otherwise
- *
+ * Retourne la valeur absolue de n
  */
 
 int _abs(int n)
 {
-if (n < 0)
-
-return (-n);
-
-else
-
-return (n);
-
+    // Si n est négatif
+    if (n < 0)
+        // On retourne l'opposé de n (qui sera positif)
+        return (-n);
+    else
+        // Sinon, on retourne n tel quel
+        return (n);
 }
