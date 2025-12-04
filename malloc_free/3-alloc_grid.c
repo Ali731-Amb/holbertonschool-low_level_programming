@@ -9,35 +9,40 @@
  * Return: pointeur vers le tableau 2D alloué,
  *         ou NULL si l’allocation échoue ou si width/height <= 0
  */
-
 #include <stdlib.h>
 
 int **alloc_grid(int width, int height)
 {
-	int **grid;
-	int i, j;
+    int **grid;
+    int i, j;
 
-	if (width <= 0 || height <= 0)
-		return (NULL);
+    // Vérification des dimensions, doivent être positives
+    if (width <= 0 || height <= 0)
+        return (NULL);
 
-	grid = malloc(height * sizeof(int *));
-	if (grid == NULL)
-		return (NULL);
+    // Allocation d'un tableau de pointeurs pour chaque ligne
+    grid = malloc(height * sizeof(int *));
+    if (grid == NULL)
+        return (NULL);
 
-	for (i = 0; i < height; i++)
-	{
-		grid[i] = malloc(width * sizeof(int));
-		if (grid[i] == NULL)
-		{
-			for (j = 0; j < i; j++)
-				free(grid[j]);
-			free(grid);
-			return (NULL);
-		}
+    // Pour chaque ligne, on alloue un tableau d'entiers
+    for (i = 0; i < height; i++)
+    {
+        grid[i] = malloc(width * sizeof(int));
+        if (grid[i] == NULL)
+        {
+            // En cas d'échec, on libère toutes les lignes déjà allouées
+            for (j = 0; j < i; j++)
+                free(grid[j]);
+            free(grid);
+            return (NULL);
+        }
 
-		for (j = 0; j < width; j++)
-			grid[i][j] = 0;
-	}
+        // Initialisation de chaque case à 0
+        for (j = 0; j < width; j++)
+            grid[i][j] = 0;
+    }
 
-	return (grid);
+    // Retour du pointeur vers la grille allouée
+    return (grid);
 }

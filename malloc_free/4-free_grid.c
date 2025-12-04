@@ -2,18 +2,19 @@
 #include <stdlib.h>
 
 /**
- * free_grid - function that frees a 2
- * dimensional grid previously created by your alloc_grid function.
+ * free_grid - fonction qui libère une grille 2D créée auparavant par la fonction alloc_grid.
  *
- *@grid: Tableau
- *@height: Hauteur du tableau
+ * @grid: Tableau à deux dimensions à libérer
+ * @height: Hauteur du tableau (nombre de lignes)
  */
 
 void free_grid(int **grid, int height)
 {
-	int i;
+    int i;
 
-	for (i = 0; i < height; i++)
-		free(grid[i]);
-	free(grid);
+    /* Parcourt chaque ligne du tableau et libère la mémoire associée */
+    for (i = 0; i < height; i++)
+        free(grid[i]);
+    /* Libère la mémoire du tableau de pointeurs */
+    free(grid);
 }
