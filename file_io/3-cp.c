@@ -14,8 +14,7 @@ int main(int argc, char *argv[])
 {
 	int fd_from, fd_to;
 	char *buffer;
-	ssize_t r_bytes;
-	ssize_t w_bytes;
+	ssize_t r_bytes, w_bytes;
 
 	if (argc != 3)
 	{
