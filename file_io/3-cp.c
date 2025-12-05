@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(2, "usage: cp file_from_to\n");
+		dprintf(2, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	fd_from = open(argv[1], O_RDONLY);
@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
 		if (w_bytes != r_bytes)
 		{
-			dprintf(2, "Can't write to %s\n", argv[2]);
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
 	}
@@ -58,8 +58,9 @@ int main(int argc, char *argv[])
 	}
 	if (close(fd_to) == -1)
 	{
-		dprintf(2, "Error: Can't close fd%d\n", fd_to);
+		dprintf(2, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
+	free(buffer);
 	return (0);
 }
