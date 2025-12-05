@@ -35,6 +35,11 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 	buffer = malloc(1024);
+	if(buffer == NULL)
+	{
+		dprintf(2, "Error: Cannot allocate memory\n");
+		exit(99);
+	}
 	while ((r_bytes = read(fd_from, buffer, 1024)) > 0)
 	{
 		w_bytes = write(fd_to, buffer, r_bytes);
